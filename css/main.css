@@ -1,9 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Slabo+27px);
 body {
 	font-family: helvetica, arial;
 	font-size: 14px;
 	color: #333;
-	background: #efefef;
-	background: url("../img/footer_lodyas.png"); /* http://subtlepatterns.com/escheresque/ */
+	background: #34495e;
 	overflow: hidden;
 }
 
@@ -11,15 +11,18 @@ body {
 	padding: 20px;
 	margin: 50px auto;
 	width: 630px;
-	background: #fff;
+	background: #ecf0f1;
 	border: 1px solid #888;
 	border-radius: 5px;
-	height: 545px;
+	height: 600px;
 }
 
 .sub-title {
-	font-size: 18px;
-	margin: 10px 0 20px 0;
+	font-size: 2em;
+	text-align: center;
+	margin: 10px 20px;
+	margin-left: 60px;
+	font-family: 'Slabo 27px', serif;
 }
 
 .hidden {
@@ -40,27 +43,31 @@ body {
 /* Place the pick winner/clear all in a relatively hidden spot
    bottom left, and bottom right respectively */
 #pick-winner {
-	position: absolute;
-	bottom: 10px;
-	left: 10px;
+	text-align: center;
+	background-color:#2ecc71;
+	padding: 10px;
+	margin-top: 10px;
 	color: #fff;
+	border-radius: 7px;
 }
 
 #clear-all-safety {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
+	text-align: center;
+	background-color: #e74c3c;
+	margin-top: 15px;
+	padding: 10px;
 	color: #fff;
+	border-radius: 7px;
 }
 
 #clear-all {
-	position: absolute;
-	bottom: 30px;
-	right: 100px;
+	text-align: center;
+	padding: 5px;
+	margin-top: 5px;
+	border-radius: 7px;
 	color: #fff;
-	background-color: #c33;
+	background-color: #e74c3c;
 	font-weight: bold;
-	padding: 3px;
 }
 /* File area */
 #file-trigger {
@@ -102,11 +109,14 @@ body {
 	width: 620px;
 	padding: 5px;
 	border-radius: 3px;
+	background-color: #ecf0f1;
+	outline: none;
 	border: 2px solid #ccc;
 }
 
 #name-input::-webkit-input-placeholder {
-	color: #ddd;
+	color: #aaa;
+	text-align: center;
 }
 
 .num-entries {
@@ -153,10 +163,21 @@ ul {
 	background-color: #dedede;
 }
 
-.name,
-.remove {
+.name {
 	display: table-cell;
 	padding: 5px;
+	background-color: #1abc9c;
+	border-top-right-radius: 7px;
+	color: #fff;
+	border-bottom-right-radius: 7px;
+}
+
+.remove{
+	display: table-cell;
+	padding: 5px;
+	background-color: #1abc9c;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
 }
 
 /* Selecting name */
@@ -202,6 +223,7 @@ ul {
 
 .winner .icon-font.remove:hover {
 	opacity: 0.5;
+	color: #fff;
 }
 
 #pick-another {
@@ -249,11 +271,12 @@ ul {
 
 .remove::before {
 	content: 'a';
-	opacity: 0.2;
+	color: #fff;
 }
 
 .remove:hover::before {
 	content: 'b';
-	color: #f33;
+	color: #e74c3c;
 	opacity: 1;
 }
+

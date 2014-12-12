@@ -251,7 +251,7 @@ $(function() {
 						var selectedWinner = $("#selecting-name").text().trim(),
 							winner = Entries.where({name: selectedWinner})[0],
 							winnerView = new NameWinnerView({model: winner});
-						console.log("Winner is: " + selectedWinner);
+						//console.log("Winner is: " + selectedWinner);
 						$("#selecting-name").html(winnerView.render().el);
 						setTimeout(function(){
 							$("#selecting-name").addClass("final-winner");
@@ -265,7 +265,7 @@ $(function() {
 		},
 
 		clearAllSafety: function() {
-			this.$el.append("<div id='clear-all' class='hidden-trigger'>Verwijder namen</div>");
+			this.$el.append("<div id='clear-all' class='hidden-trigger'>Ja, ik weet zeker dat ik de namen wil verwijderen</div>");
 			// Give a 3 second delay before removing clear-all switch
 			setTimeout(function(){
 				$("#clear-all").remove();
