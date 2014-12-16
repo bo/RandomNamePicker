@@ -1,7 +1,7 @@
 $(function() {
-	var FADE_DELAY_MS = 800,
-		EXTRA_DELAY = 150,
-		SHOW_NAME_DELAY = 150,
+	var FADE_DELAY_MS = 300,
+		EXTRA_DELAY = 100,
+		SHOW_NAME_DELAY = 90,
 		MIN_LIST_LENGTH = 60,
 		MAX_LIST_LENGTH = 300;
 
@@ -56,7 +56,7 @@ $(function() {
 			// total hack, but meah
 			$("#blanket").remove();
 			$("#selecting-name").removeClass("final-winner")
-								.html("<div id='pick-another'>pick another winner...</div>")
+								.html("<div id='kies-ander'>Kies een andere winnaar</div> <div class='return'><a href='index.html'>terug</a></div>")
 		}
 	});
 
@@ -82,7 +82,7 @@ $(function() {
 			'change #file-input' : 'showFileSample',
 			'click #file-submit' : 'createEntriesFromFile',
 			'click #pick-winner' : 'pickWinner',
-			'click #pick-another' : 'pickWinner',
+			'click #kies-ander' : 'pickWinner',
 			'click #clear-all-safety' : 'clearAllSafety',
 			'click #clear-all' : 'clearAll'
 		},
@@ -115,7 +115,7 @@ $(function() {
 						result = _.reject(result, function(val){return val === ""});
 						$("#file-sample").data("contents", result.join(","));
 						$("#file-sample").text("");
-						$("#file-sample").append("Sample of file contents:<br/>");
+						$("#file-sample").append("Lijst met namen:<br/>");
 						_.each(_.first(result, 10), function(val) {
 							$("#file-sample").append(_.escape(val) + "<br/>");
 						});
@@ -193,7 +193,7 @@ $(function() {
 			console.log("Shuffle and build list of names");
 			var list = this.getShuffledNames();
 			// Cap at MAX_LIST_LENGTH so the shuffle doesn't take too long
-			if (list.length > MAX_LIST_LENGTH) {
+			if (list.length > MAX_LIST_LENGTH - 30) {
 				list = _.sample(list, MAX_LIST_LENGTH);
 			}
 			// Keep appending shuffled list until we reach a minimum length
@@ -220,7 +220,7 @@ $(function() {
 					});
 				});
 			} else {
-				$("#pick-another").fadeOut(FADE_DELAY_MS, function(){
+				$("#kies-ander").fadeOut(FADE_DELAY_MS, function(){
 					$(this).remove();
 					that.easingTimeout(that.showNames, shuffledNames, SHOW_NAME_DELAY);
 				});
@@ -239,10 +239,10 @@ $(function() {
 			var internalCallback = function(names, delay){
 				return function(){
 					if (names && names.length !== 0) {
-						if (names.length === 20) {
+						if (names.length === 5) {
 							delay += EXTRA_DELAY; // Increase overall delay slightly
 						}
-						if (names.length < 10) {
+						if (names.length < 2) {
 							delay += 50; // Keep adding to delay, to get the 'slow-down' effect
 						}
 						names = callback(names);
@@ -269,7 +269,7 @@ $(function() {
 			// Give a 3 second delay before removing clear-all switch
 			setTimeout(function(){
 				$("#clear-all").remove();
-			}, 3000);
+			}, 10000);
 		},
 
 		clearAll: function() {

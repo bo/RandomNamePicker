@@ -14,7 +14,7 @@ body {
 	background: #ecf0f1;
 	border: 1px solid #888;
 	border-radius: 5px;
-	height: 600px;
+	height: 650px;
 }
 
 .sub-title {
@@ -24,7 +24,24 @@ body {
 	margin-left: 60px;
 	font-family: 'Slabo 27px', serif;
 }
-
+.return {
+	margin-top: 30px;
+	font-size: 50px;
+	color: #f1f1f1;
+	line-height: 30px;
+	border: 2px solid #e74c3c;
+	padding: 20px;
+	border-radius: 3px;
+	background-color: #e74c3c;
+	color: #fff;
+}
+.return a {
+	text-decoration: none;
+	color: #fff;
+}
+.return:hover{
+	opacity: 0.8;
+}
 .hidden {
 	display: none;
 }
@@ -71,24 +88,23 @@ body {
 }
 /* File area */
 #file-trigger {
-	position: absolute;
-	bottom: 50px;
-	right: 10px;
+	padding-top: 5px;
 }
 
 #file-area {
-	position: absolute;
-	top: 30px;
-	left: 30px;
 	display: none;
+	text-align: center;
+	padding-top: 5px;
 }
 
 #file-submit {
 	font-size: 14px;
 	padding: 4px;
-	border: 1px solid #333;
+	border: 1px solid #2ecc71;
 	margin-top: 10px;
 	border-radius: 3px;
+	color: #fff;
+	background-color: #2ecc71;
 }
 
 #file-submit:hover {
@@ -198,6 +214,8 @@ ul {
 
 .winner .name {
 	padding: 0;
+	background-color: transparent;
+	color: #666;
 }
 
 #selecting-name {
@@ -217,23 +235,22 @@ ul {
 	position: absolute;
 	top: 0;
 	left: 0;
-	opacity: 0;
 	font-size: 50px;
+	background-color: transparent;
 }
 
-.winner .icon-font.remove:hover {
-	opacity: 0.5;
-	color: #fff;
+#kies-ander {
+	font-size: 50px;
+	color: #f1f1f1;
+	line-height: 30px;
+	border: 2px solid #2ecc71;
+	padding: 10px;
+	border-radius: 3px;
+	background-color: #2ecc71;
 }
 
-#pick-another {
-	font-size: 80px;
-	color: #777;
-	line-height: 80px;
-}
-
-#pick-another:hover {
-	color: #333;
+#kies-ander:hover {
+	opacity: 0.8;
 	cursor: pointer;
 }
 
